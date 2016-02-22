@@ -1,4 +1,4 @@
-{ nixpkgs ? import <nixpkgs> { }, buildFHSUserEnv ? nixpkgs.buildFHSUserEnv, xorg ? nixpkgs.xorg, stdenv ? nixpkgs.stdenv, writeTextFile ? nixpkgs.writeTextFile, fetchurl ? nixpkgs.fetchurl  }:
+{ buildFHSUserEnv , xorg, stdenv, writeTextFile, fetchurl  }:
 
 let version = "2-0-47-11";
     dominionfhs = buildFHSUserEnv { name = "dominion-fhs"; targetPkgs = pkgs: [ xorg.libX11 xorg.libXcursor xorg.libXrandr ]; };
